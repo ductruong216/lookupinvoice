@@ -12,7 +12,16 @@ namespace LookupInvoice
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            // add a new route
+            routes.MapRoute(
+                  name: "TraCuu",
+                  url: "tra-cuu/{action}",
+                  defaults: new
+                  {
+                      controller = "TraCuu",
+                      action = "Index"
+                  }
+              );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

@@ -13,49 +13,49 @@ using LookupInvoice.Domain.Utility;
 
 namespace LookupInvoice.Controllers
 {
-	
-	public class LookupController : Controller
-	{
-		// GET: Lookup
-		private readonly IRepository<DulieuHoadon> _repository;
 
-		public LookupController(IRepository<DulieuHoadon> repository)
-		{
-			_repository = repository;
-		}
+    public class LookupController : Controller
+    {
+        // GET: Lookup
+        private readonly IRepository<DulieuHoadon> _repository;
 
-		[HttpPost]
-		public ActionResult GetInvoice(string maBaoMat, string maSoThue)
-		{
-			var dbContext = (Entities)ObjectFactory.GetInstance<IDbFactory>();
-			var connection = ConfigurationManager.ConnectionStrings["Entities"];
-			var ecsBuilder = new EntityConnectionStringBuilder(connection.ConnectionString);
-			var sqlBuilder = new SqlConnectionStringBuilder(ecsBuilder.ProviderConnectionString) { InitialCatalog = maSoThue };
-			if (dbContext.Database.Connection.State == ConnectionState.Open)
-				dbContext.Database.Connection.Close();
-			dbContext.Database.Connection.ConnectionString = sqlBuilder.ConnectionString;
+        public LookupController(IRepository<DulieuHoadon> repository)
+        {
+            _repository = repository;
+        }
 
-			var invoice = _repository.GetAll();
-			var selectInvoice = invoice.SingleOrDefault(x => x.Mabaomat == maBaoMat);
-			var firstPara = maSoThue;
-			var kyhieu = selectInvoice.Kyhieu;
-			var secondPara = kyhieu.Remove(2, 1);
-			var sohoadon = selectInvoice.Sohoadon.ToString();
-			var url = "http://hoadondientu.link/" + firstPara + "/" + firstPara + "_" + secondPara + "_" + sohoadon + ".pdf";
-			return Json(new { redirectToUrl = url }, JsonRequestBehavior.AllowGet);
-		}
+        [HttpPost]
+        public ActionResult GetInvoice(string maBaoMat, string maSoThue)
+        {
+            var dbContext = (Entities)ObjectFactory.GetInstance<IDbFactory>();
+            var connection = ConfigurationManager.ConnectionStrings["Entities"];
+            var ecsBuilder = new EntityConnectionStringBuilder(connection.ConnectionString);
+            var sqlBuilder = new SqlConnectionStringBuilder(ecsBuilder.ProviderConnectionString) { InitialCatalog = maSoThue };
+            if (dbContext.Database.Connection.State == ConnectionState.Open)
+                dbContext.Database.Connection.Close();
+            dbContext.Database.Connection.ConnectionString = sqlBuilder.ConnectionString;
 
-		public ActionResult Index()
-		{
-			return View();
-		}
-	}
+            var invoice = _repository.GetAll();
+            var selectInvoice = invoice.SingleOrDefault(x => x.Mabaomat == maBaoMat);
+            var firstPara = maSoThue;
+            var kyhieu = selectInvoice.Kyhieu;
+            var secondPara = kyhieu.Remove(2, 1);
+            var sohoadon = selectInvoice.Sohoadon.ToString();
+            var url = "http://hoadondientu.link/" + firstPara + "/" + firstPara + "_" + secondPara + "_" + sohoadon + ".pdf";
+            return Json(new { redirectToUrl = url }, JsonRequestBehavior.AllowGet);
+        }
 
-	public class MultiTenantFilter : ActionFilterAttribute
-	{
-		public override void OnActionExecuting(ActionExecutingContext filterContext)
-		{
-			
-		}
-	}
+        public ActionResult Index()
+        {
+            return View();
+        }
+    }
+
+    public class MultiTenantFilter : ActionFilterAttribute
+    {
+        public override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+
+        }
+    }
 }

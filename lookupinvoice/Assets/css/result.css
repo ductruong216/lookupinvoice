@@ -1,0 +1,9 @@
+.button-area {
+    margin: 10px 19%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn {
+    border-radius: 25px;
+}

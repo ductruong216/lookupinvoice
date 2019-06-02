@@ -1,31 +1,311 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿<!--
+author: Boostraptheme
+author URL: https://boostraptheme.com
+License: Creative Commons Attribution 4.0 Unported
+License URL: https://creativecommons.org/licenses/by/4.0/
+-->
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!DOCTYPE html>
+<html class="no-js" prefix="og: http://ogp.me/ns#" lang="en-IN">
+<head>
+    <meta name="google-site-verification" content="Hjumx51CPNjitaTklpno99EW4dsA_qK4HPAU1sBv9tE" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hóa đơn điện tử Avsoft-Einvoice</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Hóa đơn điện tử,Hóa đơn điện tử doanh nghiệp,tra cứu hóa đơn điện tử, Hóa đơn điện tử, Hóa đơn điện tử doanh nghiệp Avsoft-Einvoice" />
+    <meta name="description" content="Hóa đơn điện tử doanh nghiệp Avsoft-Einvoice" />
+    <link href="~/Assets/img/startup_logo_96dp.png" rel="apple-touch-icon" sizes="96x96" />
+    <link href="~/Assets/img/startup_logo_96dp.png" rel="icon" sizes="96x96" type="image/png" />
+    <link href="~/Assets/img/startup_logo_32dp.png" rel="icon" sizes="32x32" type="image/png" />
+   
+    <meta content="~/Assets/img/startup_logo_96dp.png" name="msapplication-TileImage">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    <meta property="og:url" content="https://www.boostraptheme.com/demo/index.html" />
+    <meta property="og:title" content="Hóa đơn điện tử Avsoft-Einvoice" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:site_name" content="Boostraptheme" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="BoostrapTheme" />
+    <meta name="twitter:creator" content="BoostrapTheme" />
+
+    <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Assets/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Assets/css/animate.min.css" rel="stylesheet" />
+    <link href="~/Assets/css/app.css" rel="stylesheet" />
+
+
+    <script src="~/Assets/js/jquery.min.js"></script>
+    <script>$(window).on('load', function () { $(".loader").fadeOut(2000); });</script>
+</head>
+
+<body>
+
+    <div class="loader"></div>
+    <!-- NAVIGATION
+        =================-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand js-scroll-trigger" href="index.html">
+                <img src="~/Assets/img/Logo Avsoft-Einvoice.png" style="max-height: 50px;" alt="" class="img-fluid">
+            </a>
+            <a href="https://www.facebook.com/hoadondientu.avsoft" target="_blank">
+                <img alt="Facebook"  src="~/Assets/img/FaceBookIconpng.png" width="30" height="30">
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" 
+                    data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="@Url.Action("Index","Home")">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="Thutuc.html">Thủ tục</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger active" href="@Url.Action("Index","Lookup")">Tra cứu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger active" href="@Url.Action("Index","TraCuu")">Tra cứu XML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="Huongdan.html">Hướng dẫn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="lh.html">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER
+        =================-->
+    <header id="conent" class="header-cat header-cat-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1><font color="#0595FB">Hóa đơn điện tử
+                        <font color="5EE00D">Avsoft</font>-Einvoice</font></h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SERVICES
+        =================-->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6  service-img m-auto">
+                    <img src="~/Assets/img/inv11.png" alt="" class="img-fluid"> <br>
+                    <img src="~/Assets/img/service-bg.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 text-center px-4">
+                            <div class="service-desc-cont">
+                                <img src="~/Assets/img/icons/icon-6.png" class="img-fluid" alt="">
+                                <h5>Lợi ích</h5>
+                                <p> Hóa đơn điện tử tránh được các rủi ro, thất lạc, hư hỏng hóa đơn. Rút ngắn thời gian gửi nhận hóa đơn, Tra cứu MST online </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 text-center px-4">
+                            <div class="service-desc-cont">
+                                <img src="~/Assets/img/icons/icon-8.png" class="img-fluid" alt="">
+                                <h5>Bảo mật</h5>
+                                <p>Nhiều cơ chế bảo mật,mã hóa, DLL, SSL https, DDDOS, ...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 text-center px-4">
+                            <div class="service-desc-cont">
+                                <img src="~/Assets/img/icons/icon-3.png" class="img-fluid" alt="">
+                                <h5>Hóa đơn điện tử Gửi nhận tra cứu dễ dàng</h5>
+                                <p>Nhiều phương thức gửi nhận: gửi hóa đơn cho khách hàng bằng email, tra cứu tải hóa đơn tại website</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 text-center px-4">
+                            <div class="service-desc-cont">
+                                <img src="~/Assets/img/icons/icon-1.png" class="img-fluid" alt="">
+                                <h5>Hóa đơn điện tử Dễ dùng, tiện ích</h5>
+                                <p>Giao diện thân thiện, như đang trên tờ hóa đơn kế toán thường xuất hóa đơn, hỗ trợ in phiếu thu, phiếu xuất kèm theo, ký số phiếu và đính kèm theo email gửi hóa đơn </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 text-center px-4">
+                            <div class="service-desc-cont">
+                                <img src="~/Assets/img/icons/icon-4.png" class="img-fluid" alt="">
+                                <h5>Hóa đơn điện tử Import danh mục khách hàng, hàng hóa từ Template</h5>
+                                <p>Hỗ trợ tải dữ liệu khách hàng, hàng hóa có sẵn mà không cần phải nhập lại từng khách hàng, mặt hàng theo Template</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 text-center px-4">
+                            <div class="service-desc-cont">
+                                <img src="~/Assets/img/icons/icon-5.png" class="img-fluid" alt="">
+                                <h5>Hóa đơn điện tử Tích hợp phần mềm</h5>
+                                <p>Hóa đơn điện tử Avsoft-Einvoice thiết kế theo yêu cầu kết nối dữ diệu với phần mềm ERP, SAP, Kế toán, bán hàng, ...không can thiệp đến dữ liệu phần mềm</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 text-center px-4">
+                            <div class="service-desc-cont">
+                                <img src="~/Assets/img/icons/Congno.jpg" class="img-fluid" alt="">
+                                <h5>Hóa đơn điện tử Theo dõi công nợ</h5>
+                                <p>
+                                    Hóa đơn điện tử Avsoft-Einvoice - Tính năng theo dõi tổng hợp, chi tiết công nợ khách hàng <br>
+                                    - Thực hiện lệnh thu ngay thể hiện ngay số tiền thu tại số hoá đơn được doublelick chọn
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 text-center px-4">
+                            <div class="service-desc-cont">
+                                <img src="~/Assets/img/icons/Phieuthu.png" class="img-fluid" alt="">
+                                <h5>Hóa đơn điện tử Hỗ trợ in phiếu thu -phiếu xuất</h5>
+                                <p>
+                                    Hóa đơn điện tử Avsoft-Einvoice hỗ trợ in phiếu thu, phiếu xuất kèm theo <br>
+                                    Ký số phiếu thu hoặc phiếu xuất dính kèm email gửi hóa đơn đối với những khách hàng cần phiếu thu, phiếu xuất kèm theo
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG
+        =================-->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="row wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-md-12 text-center">
+                    <div class="heading">
+                        <h1>Bảng giá <span>Hóa đơn điện tử</span></h1>
+                        <div class="bord-bot"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="blog-cont wow fadeInUp" data-wow-delay="0.3s">
+                        <img src="~/Assets/img/blog/Avsoft1000.png" alt="" class="img-fluid">
+                        <h5>Bảng giá 1000 số hóa đơn: 1.500.000 Đ</h5>
+                        <p>Phần mềm không chịu thuế GTGT <br> Không giới hạn thời gian sử dụng</p>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-cont wow fadeInUp" data-wow-delay="0.6s">
+                        <img src="~/Assets/img/blog/avsoftprice.png" alt="" class="img-fluid">
+                        <h5>Bảng giá chi tiết hóa đơn điện tử Avsoft-Einvoice </h5>
+                        <p>Phần mềm không chịu thuế GTGT <br> Không giới hạn thời gian sử dụng</p>
+                        <a href="lh.html" target="_blank">Xem</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-cont wow fadeInUp" data-wow-delay="0.9s">
+                        <img src="~/Assets/img/blog/Avsoft5000.png" alt="" class="img-fluid">
+                        <h5>Bảng giá 5000 số hóa đơn: 2.700.000 Đ</h5>
+                        <p>Phần mềm không chịu thuế GTGT <br> Không giới hạn thời gian sử dụng</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTS
+        =================-->
+    <!-- FOOTER
+        =================-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="company-desc">
+                        <img src="~/Assets/img/Logo Avsoft-Einvoice.png" alt="" class="img-fluid">
+                        <p>CÔNG TY TNHH DỊCH VỤ PHẦN MỀM AVSE</p>
+                        <address>
+                            <i class="fa fa-map-marker"></i> TP. HCM: B199/5 Nguyễn Văn Quá, P. ĐHT, Q12, TP. HCM <br>
+                            <font color="yellow">Hotline: 0986 867 415 - 079 688862</font><br>
+                            <font color="#42DE11">Phụ trách khu vực TP. HCM - BÌNH DƯƠNG - ĐỒNG NAI </font><br>
+                            <font color="yellow">Hotline: Mr Hiền 0909 338 620</font><br>
+                            Khánh Hòa: <br>
+                            &nbsp 265 Thống Nhất, TP. Nha Trang, Tỉnh Khánh Hòa - ĐT: 0913.491 490 <br>
+                            Lâm Đồng:<br>
+                            &nbsp 5B Trạng Trình, phường 9, Tp. Đà Lạt - ĐT: 0913749033<br>
+                            Đà Nẵng - Huế: 0986 867 415<br>
+                            Hà Nội: Sn 19,Ngách 322/17/25 Đường Mỹ Đình, P. Mỹ Đình 1, Hà Nội <br>
+                            ĐT: Ms Hương: 0983 127 384<br>
+                            ĐT: Ms Hoàng: 0934 405 694
+                            <div>
+                                <!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
+                                <!-- Histats.com  START  (aync)-->
+                                <script type="text/javascript">
+    var _Hasync = _Hasync || [];
+                                    _Hasync.push(['Histats.start', '1,4254431,4,435,112,75,00011101']);
+                                    _Hasync.push(['Histats.fasi', '1']);
+                                    _Hasync.push(['Histats.track_hits', '']);
+                                    (function () {
+                                        var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+                                        hs.src = ('//s10.histats.com/js15_as.js');
+                                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+                                    })();</script>
+                                <noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4254431&101" alt="" border="0"></a></noscript>
+                                <!-- Histats.com  END  -->
+                            </div>
+                        </address>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="social">
+                        <h3>Kết nối</h3>
+                        <ul>
+                            <li><i <a href="https://www.facebook.com/hoadondientu.avsoft/" class="fa fa-facebook"> </a></i></li>
+                            <li><i class="fa fa-youtube"></i></li>
+                        </ul>
+                        <div class="cont-info number">
+                            <i class="fa fa-phone"></i>
+                            <a href="tel:1234567890">Hotline: 0986 867 415</a>
+                        </div>
+                        <div class="cont-info mail">
+                            <i class="fa fa-envelope-o"></i>
+                            <a href="mail@startup.com">anktdn@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="latest-news">
+                        <h3>Văn bản Áp dụng</h3>
+                        <img src="~/Assets/img/blog/blog-small-1.jpg" alt="" class="img-fluid">
+                        <p>Thông tư 32/2011/TT-BTC </p>
+                        <small>Ngày 14/03/2011</small>
+                    </div>
+                    <div class="latest-news">
+                        <img src="~/Assets/img/blog/blog-small-2.jpg" alt="" class="img-fluid">
+                        <p>Thông tư 37/2017/TT-BTC</p>
+                        <small>Ngày 27/04/2017</small>
+                    </div>
+                    <div class="latest-news">
+                        <img src="~/Assets/img/blog/blog-small-2.jpg" alt="" class="img-fluid">
+                        <p>Nghị định 119/2018/NĐ-CP</p>
+                        <small>Ngày 12/09/2018</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid footer-b text-center">
+            <small>Bản quyền &copy; 2019 Avsoft-Einvoice</small>
+        </div>
+    </footer>
+    <script src="~/Assets/js/popper.min.js"></script>
+    <script src="~/Assets/js/bootstrap.min.js"></script>
+    <script src="~/Assets/js/jquery.easing.min.js"></script>
+    <script src="~/Assets/js/owl.carousel.min.js"></script>
+    <script src="~/Assets/js/wow.min.js"></script>
+    <script src="~/Assets/js/app.js"></script>
+</body>
+</html>

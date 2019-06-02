@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tra cứu hóa đơn</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="~/Assets/images/icons/LOGO(chuan)WEB (1).png" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/main.css">
+</head>
+<body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-form-title" style="background-image: url('../../Assets/images/bg-01.jpg');">
+                    <span class="login100-form-title-1">
+                        HỆ THỐNG TRA CỨU HÓA ĐƠN ĐIỆN TỬ AVSE
+                    </span>
+                </div>
+                @using (@Html.BeginForm("GetInvoice", "TraCuu", FormMethod.Post, new { @class = "login100-form" }))
+                {
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+                        <span class="label-input100">MST Người bán:</span>
+                        <input name="maSoThue" class="input100" type="text" id="ma_so_thue" placeholder="Nhập vào MST">
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-18" data-validate="Password is required">
+                        <span class="label-input100">Mã tra cứu:</span>
+                        <input name="maBaoMat" class="input100" type="text" id="ma_tra_cuu" placeholder="Nhập vào mã tra cứu">
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <button type="submit" class="login100-form-btn">Tra cứu</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<script src="~/Assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="~/Assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/Assets/vendor/select2/select2.min.js"></script>
+<script src="~/Assets/js/main.js"></script>
+<script src="~/Assets/js/sweetalert.min.js"></script>

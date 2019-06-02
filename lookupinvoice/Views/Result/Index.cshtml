@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Result";
+    var url = ViewBag.data;
+}
+
+<head>
+    <title>Tra cứu hóa đơn</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="~/Assets/images/icons/LOGO(chuan)WEB (1).png" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="~/Assets/css/result.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+
+<div class="button-area">
+    <a role="button" class="btn btn-success" download="hoa-don.xml" href="@url" target="_blank">Tải Hóa đơn XML</a>
+    @*<button type="button" onclick="SaveXML()" class="btn btn-success">Tải hóa đơn</button>*@
+    <button type="button" onclick="printInvoice()" class="btn btn-success">Tải Hóa đơn PDF</button>
+</div>
+
+<div id="page"></div>
+
+<iframe type="application/pdf" id="invoice" name="invoice" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-modals"
+        src="@url"
+        style="border: 0; width:100%; height:90%;"></iframe>
+
+<script src="~/Assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+
+<script>
+    function printInvoice() {
+        window.frames["invoice"].focus();
+        window.frames["invoice"].print();
+    }
+</script>
