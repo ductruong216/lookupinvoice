@@ -3,8 +3,10 @@
     var url = ViewBag.data;
 }
 
+
 <head>
-    <title>Tra cứu hóa đơn</title>
+    <title> @url </title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,22 +17,52 @@
 </head>
 
 <div class="button-area">
-    <a role="button" class="btn btn-success" download="hoa-don.xml" href="@url" target="_blank">Tải Hóa đơn XML</a>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <a href="@url" target="_blank" download></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a id="invoice-file" href="" target="_blank" download></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" onclick="downloadXML()" class="btn btn-success">Tải Hóa đơn XML</button>
+
+    @*<a role="button" class="btn btn-success" href="@url" target="_blank" download>Tải Hóa đơn XML</a>*@
     @*<button type="button" onclick="SaveXML()" class="btn btn-success">Tải hóa đơn</button>*@
-    <button type="button" onclick="printInvoice()" class="btn btn-success">Tải Hóa đơn PDF</button>
+    <button type="button" onclick="printInvoice()" class="btn btn-success">Tải/In bản thể hiện PDF</button>
 </div>
 
 <div id="page"></div>
 
-<iframe type="application/pdf" id="invoice" name="invoice" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-modals"
+<iframe type="application/pdf" title="@url" id="invoice" name="invoice" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-modals"
         src="@url"
         style="border: 0; width:100%; height:90%;"></iframe>
 
 <script src="~/Assets/vendor/jquery/jquery-3.2.1.min.js"></script>
-
+<!--window.frames["invoice"].focus();-->
 <script>
+    var url = '@url';
+    var mst = url.split("/")[3];
+    var urlForXSL = "http://hoadondientu.link/" + mst + "/invoice.xsl"
+    var urlForCTS = "http://hoadondientu.link/"+ mst +"/CTS.xsl"
+
+    document.getElementById("invoice-file").setAttribute("href", urlForXSL);
+
+    function downloadXML() {
+        var table = $("tbody tr a").slice(1);
+        for(let file of table.prevObject){
+            file.click();
+        }
+    }
+
     function printInvoice() {
-        window.frames["invoice"].focus();
+         document.title = window.parent.document.title = "titile";
         window.frames["invoice"].print();
     }
 </script>
